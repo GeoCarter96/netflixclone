@@ -12,16 +12,16 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
 
-  const navigate = useNavigate();;
+  const navigate = useNavigate();
 
 useEffect (() => {
-onAuthStateChanged(auth, async () => {
+onAuthStateChanged(auth, async (user) => {
   if(user){
     console.log("Logged In");
-    navigate('/')
+    navigate('/');
   }else {
     console.log("Logged Out");
-    navigate('/login')
+    navigate('/login');
   }
 })
 }, [])

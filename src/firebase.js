@@ -32,7 +32,7 @@ await addDoc(collection(db, "user"), {
     authProvider: "local",
     email,
 });
-}catch(error){
+} catch (error){
 console.log(error);
 toast.error(error.code.split('/')[1].split('-').join(" "));
 }
@@ -40,7 +40,7 @@ toast.error(error.code.split('/')[1].split('-').join(" "));
 
 const login = async (email, password) => {
 try {
-    signInWithEmailAndPassword(auth,email,password);
+   await signInWithEmailAndPassword(auth,email,password);
 } catch (error) {
     console.log(error);
   toast.error(error.code.split('/')[1].split('-').join(" "));
